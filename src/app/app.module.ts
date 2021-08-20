@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpErrorResponse, HTTP_INTERCEPTORS } from '@angular/common/http' 
 import { GaugeModule } from 'angular-gauge';
-import { MatTabsModule } from '@angular/material/tabs'
-import { MatIconModule, MatIconRegistry } from '@angular/material/icon'
+import { MatTabGroup, MatTabsModule } from '@angular/material/tabs'
+import { MatIcon, MatIconModule, MatIconRegistry } from '@angular/material/icon'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatSelectModule } from '@angular/material/select'
 
@@ -18,13 +18,15 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { HttpErrosInterceptor } from './interceptors/http-error.interceptor';
 import { DetailsComponent } from './components/details/details.component';
+import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    GameTabsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { DetailsComponent } from './components/details/details.component';
     GaugeModule.forRoot(),
     MatFormFieldModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
 
   ],
   providers: [
